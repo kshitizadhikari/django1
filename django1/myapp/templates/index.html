@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django1</title>
+</head>
+<body>
+    <button><a href="{% url "myapp:index" %}">Go to Home</a></button>
+    {% block content %}
+        <button><a href="{% url "myapp:create-article" %}">Create Article</a></button>
+        <h1>Home</h1>
+        <ul>
+        {% for article in articles %}
+            <li><a href="{% url "myapp:get-article" article.id %}">{{article.title}}</a></li>
+        {% endfor %}
+        </ul>
+    {% endblock content %}
+
+</body>
+</html> 

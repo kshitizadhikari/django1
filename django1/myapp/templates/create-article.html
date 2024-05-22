@@ -1,0 +1,9 @@
+{% extends "index.html" %} {% block content %}
+<h1>Create Article</h1>
+
+<form class="site-form" action="{% url "myapp:create-article" %}" method="POST">
+    {% csrf_token %} {{form}}
+    <button type="submit" >Submit</button>
+</form>
+{% endblock content %}
+    
